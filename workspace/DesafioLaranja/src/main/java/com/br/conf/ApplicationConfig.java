@@ -17,9 +17,6 @@ public class ApplicationConfig extends Application {
 	private Set<Class<?>> empty = new HashSet<Class<?>>();
 
 	public ApplicationConfig() {
-		//CorsFilter corsFilter = new CorsFilter();
-		//corsFilter.getAllowedOrigins().add("*");
-		//corsFilter.setAllowedMethods("OPTIONS, GET, POST,DELETE, PUT,PATCH");
 		singletons.add(UsuarioResource.class);
 
 	}

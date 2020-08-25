@@ -10,7 +10,7 @@ import CrudUsuario.ICrudUsuario;
 public class testeCrud {
 	
 	private static CrudUsuario Crud = new CrudUsuario();
-	private static Usuario Usuario;
+	private static Usuario Usuario = new Usuario ();
 
 	public static void main(String[] args) {
 		
@@ -20,11 +20,13 @@ public class testeCrud {
 		int k;	
 		String n = nome ;
 		Usuario = new Usuario();
+		Scanner teclado = new Scanner(System.in);
 		// Menu usado para testes do CRUD
-		/*
-		public static void menu() { 
-			int opcao = 5;
-			Scanner teclado = new Scanner(System.in);
+	
+		 
+		
+			  int opcao = 5;
+			  
 			do {
 				System.out.println("\n\n### Cadastro de Usuario ###");
 					System.out.println("\n                  =========================");
@@ -37,16 +39,12 @@ public class testeCrud {
 
 				opcao = teclado.nextInt();
 				
-				      System.out.println("Digite seu nome: ");			
-					  nome = teclado.nextLine();
-					 System.out.println("Digite seu email: ");
-					  email = teclado.nextLine();			  
-					 System.out.println("Digite sua Senha : ");				
-					  Senha = teclado.nextLine();
+				     
 				switch (opcao) {
 				case 1:
-				     
-					popularArray(nome,email,Senha);
+					boolean sim ;
+						Cadastro() ;						
+					
 					break;
 				case 2:
 				     listarUsuario( nome ,email);
@@ -65,7 +63,7 @@ public class testeCrud {
 					break;
 				}
 			} while (opcao != 0);
-		}*/
+
 		
 		
 		  
@@ -86,10 +84,20 @@ public class testeCrud {
 
 	}
 
-	/*private static void listarUsuarios(String nome ,String email ) {
-		listarUsuarios(nome, email );
-		
-	}*/
+	public static void Cadastro() {
+
+		String nome = null;
+		String email = null;
+		String Senha = null;
+		Scanner teclado = new Scanner(System.in);
+		 System.out.println("Digite seu nome: ");			
+		  nome = teclado.nextLine();
+		 System.out.println("Digite seu email: ");
+		  email = teclado.nextLine();			  
+		 System.out.println("Digite sua Senha : ");				
+		  Senha = teclado.nextLine();
+		  popularArray(nome,email,Senha);
+		}
 
 	private static void popularArray(String nome , String email , String senha) {
 		Usuario Usuarios = new Usuario();
@@ -118,9 +126,9 @@ public class testeCrud {
 	   Usuario Usuarios = new Usuario();
 	   Usuarios.setNome(nome);
 	   Usuarios.setemail(email);
-	   boolean Deletar= Crud.deletarUsuarioPorEmail(email);
+	   boolean Deletar= Crud.deletarUsuarioPorEmail(nome,email);
 	   if ( Deletar ) {
-			System.out.println(Usuarios.getNome() + "  foi deletado com sucesso !");
+			System.out.println( "  foi deletado com sucesso !");
 		}
 	   
    }

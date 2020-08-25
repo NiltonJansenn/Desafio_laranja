@@ -13,7 +13,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.br.entity.Usuario;
+import desafio_Laranja.Usuario;
 
 @Path("/usuario")
 @Consumes(MediaType.APPLICATION_JSON)
@@ -59,7 +59,7 @@ public class UsuarioResource {
 		
 		Usuario usuario = new Usuario();
 		usuario.setNome("Teste");
-		usuario.setEmail("Teste@teste.coml.br");
+		usuario.setemail("Teste@teste.coml.br");
 		arrayList.add(usuario);		
 		
 		return arrayList;

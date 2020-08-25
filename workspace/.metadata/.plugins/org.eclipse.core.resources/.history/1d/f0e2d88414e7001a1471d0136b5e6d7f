@@ -1,0 +1,5 @@
+package deafio_laranja;
+
+public @interface Usuario {
+
+}

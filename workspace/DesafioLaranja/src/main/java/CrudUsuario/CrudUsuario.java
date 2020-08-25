@@ -26,9 +26,9 @@ import desafio_Laranja.testeCrud;
  *digitoUnico§ = digitoUnico(9875987598759875)
   */
 
-
 public class CrudUsuario implements ICrudUsuario {
-	
+
+     private static Usuario Usuario = new Usuario ();
 	List<Usuario> listaUsuarios = new ArrayList<Usuario>();
 	Scanner teclado = new Scanner(System.in);
 	 String nome;
@@ -51,19 +51,28 @@ public class CrudUsuario implements ICrudUsuario {
 	}
 
 	@Override
-	public boolean deletarUsuarioPorEmail(String email) {
+	public boolean deletarUsuarioPorEmail(String email , String nome  ) {
 		  System.out.println("Digite nome que deseja excluir: ");			
 			nome = teclado.nextLine();
           System.out.println("Digite o e-mail que seja excluir: ");			
 			email= teclado.nextLine();
 		
 		for (int i=0 ; i< listaUsuarios.size() ;i++) {
-			if (listaUsuarios.get(i).email.equals(email)) {
-				listaUsuarios.remove(i);
+			System.out.println("nome "+listaUsuarios.get(i).equals(nome));
+			listaUsuarios.get(i);
+			if (listaUsuarios.get(i).equals(email) && listaUsuarios.get(i).equals(nome)) {
+				
+				@SuppressWarnings({ "unlikely-arg-type", "unused" })
+				boolean remove = listaUsuarios.remove(nome);
+				@SuppressWarnings({ "unused", "unlikely-arg-type" })
+				boolean remove2 = listaUsuarios.remove(email);
+				listaUsuarios.remove(Usuario.getNome().contentEquals(nome));
+				
+				
 			}
 		}System.out.println("  foi deletado com sucesso !");
 
-		return false;
+		return true;
 	}
 
 	@Override
