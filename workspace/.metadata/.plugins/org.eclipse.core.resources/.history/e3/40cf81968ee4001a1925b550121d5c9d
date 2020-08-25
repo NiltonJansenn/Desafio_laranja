@@ -1,0 +1,19 @@
+package com.br.ws;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("/usuario")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
+public class UsuarioResource {
+
+	@GET
+	@Path("/get")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String hello() {
+		return "Hello from programmer gate!";
+	}
+
+}
